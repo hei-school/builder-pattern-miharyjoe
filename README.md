@@ -36,7 +36,18 @@ Parallels the CarBuilder counterpart, concentrating exclusively on compiling ins
 Coordinates and synchronizes interactions between various builders to establish coherent construction flows, encapsulating intricate sequences that ultimately yield fully formed Cars accompanied by detailed Manuals.
 
 ## Usage Instructions
-To utilize this project, first import the source files into your favorite Java Integrated Development Environment (IDE) and compile them successfully. Subsequently, leverage the enclosed JUnit test suite located in BuilderImplTest.java to examine functionalities offered by the provided APIs. Run the test suite and observe the console output displaying successful execution logs, ensuring flawless operation of the Builder Design Pattern demonstrated herein.
+To utilize this project, first import the source files into your favorite Java Integrated Development Environment (IDE) and compile them successfully.
+    
+```bash
+        git clone https://github.com/hei-school/builder-pattern-miharyjoe
+   ``` 
+
+Subsequently, leverage the enclosed JUnit test suite located in BuilderImplTest.java to examine functionalities offered by the provided APIs. Run the test suite and observe the console output displaying successful execution logs, ensuring flawless operation of the Builder Design Pattern demonstrated herein.
+
+### Or 
+You can see directly in the [Github Action](https://github.com/hei-school/builder-pattern-miharyjoe/actions) the result of the test of the implementation , it should show 3 test passed for the SportCar, SedanCar, TruckCar
+
+
 
 Feel encouraged to employ this blueprint as inspiration for devising similar applications necessitating sophisticated object composition techniques leveraging the power of the Builder Design Pattern. Happy coding! 💻🚀
 
