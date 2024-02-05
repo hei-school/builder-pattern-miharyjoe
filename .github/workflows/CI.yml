@@ -10,7 +10,7 @@ on:
       - 'pom.xml'
 
 jobs:
-  mvn-build-and-test:
+  mvn-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,5 +30,29 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-maven-
 
-    - name: Build and Test
-      run: mvn clean install --file pom.xml
+    - name: Run Maven Build
+      run: mvn clean package --file pom.xml
+
+  mvn-test:
+    needs: mvn-build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-maven-
+
+    - name: Run Maven Test
+      run: mvn test --file pom.xml
